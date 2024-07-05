@@ -1,21 +1,36 @@
-
-{% extends "base.html" %}
-{% block content %}
-  <div id="app">
-    <section id="status-section">
-      <div id="status"></div>
-    </section>
-    <section id="quiz-section">
-      <h2>Quiz</h2>
-      <label for="quiz-count">Number of questions:</label>
-      <input type="number" id="quiz-count" min="1" max="10" value="5">
-      <button id="start-quiz">Start Quiz</button>
-      <div id="quiz-card" class="hidden">
-        <div id="quiz-word"></div>
-        <div id="quiz-options"></div>
-        <div id="quiz-result"></div>
-        <button id="next-question" class="hidden">Next Question</button>
-      </div>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocab Master</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Vocab Master</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        {% if username %}
+          <li><a href="{{ url_for('add_word') }}">Add Word</a></li>
+          <li><a href="{{ url_for('word_list') }}">Word List</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          <li>Welcome, {{ username }}!</li>
+        {% else %}
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    {% block content %}{% endblock %}
   </div>
-{% endblock %}
+  <footer>
+    <p>&copy; 2023 Vocab Master. All rights reserved.</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
