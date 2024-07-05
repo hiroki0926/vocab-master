@@ -206,55 +206,26 @@ body {
   /* 既存のスタイルに加えて以下を追加 */
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-tr:hover {
-  background-color: #ddd;
-}
-/* Popup Container */
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 600px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: left;
-}
-
-/* Popup Content */
-.popup-content {
-  position: relative;
-}
-
-/* Close Button */
-.close-button {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  

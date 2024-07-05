@@ -1,0 +1,6 @@
+cat app.py >./pronpt/app.py
+cat ./static/app.js > ./pronpt/app.js
+cat ./templates/index.html > ./pronpt/index.html
+cat ./templates/base.html > ./pronpt/base.html
+cat ./templates/login.html > ./pronpt/login.html
+cat ./templates/register.html > ./pronpt/word_register.html
