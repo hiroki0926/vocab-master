@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="app">
+    <section id="status-section">
+      <div id="status"></div>
+    </section>
+    <section id="quiz-section">
+      <h2>Quiz</h2>
+      <label for="quiz-count">Number of questions:</label>
+      <input type="number" id="quiz-count" min="1" max="10" value="5">
+      <button id="start-quiz">Start Quiz</button>
+      <div id="quiz-card" class="hidden">
+        <div id="quiz-word"></div>
+        <div id="quiz-options"></div>
+        <div id="quiz-result"></div>
+        <button id="next-question" class="hidden">Next Question</button>
+      </div>
+    </section>
+  </div>
+{% endblock %}

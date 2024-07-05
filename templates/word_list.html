@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Word List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Word</th>
+        <th>Meaning</th>
+        <th>Correct Answers</th>
+        <th>Total Attempts</th>
+        <th>Accuracy</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for word in words %}
+        <tr>
+          <td>{{ word.word }}</td>
+          <td>{{ word.meaning }}</td>
+          <td>{{ word.correct_count }}</td>
+          <td>{{ word.total_count }}</td>
+          <td>{{ "%.2f" % (word.correct_count / word.total_count * 100) if word.total_count > 0 else "N/A" }}%</td>
+          <td><button class="detail-button" data-word-id="{{ word.id }}">Details</button></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div id="word-detail-popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <span class="close-button">&times;</span>
+      <h2 id="popup-word"></h2>
+      <p><strong>Meaning:</strong> <span id="popup-meaning"></span></p>
+      <p><strong>Pronunciation:</strong> <span id="popup-pronunciation"></span></p>
+      <p><strong>Example Sentence:</strong> <span id="popup-example-sentence"></span></p>
+    </div>
+  </div>
+{% endblock %}

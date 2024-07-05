@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Add a New Word</h1>
+  <form method="POST">
+    <label for="word">Word:</label>
+    <input type="text" name="word" required>
+    <br>
+    <label for="meaning">Meaning:</label>
+    <input type="text" name="meaning" required>
+    <br>
+    <button type="submit">Add Word</button>
+  </form>
+{% endblock %}
